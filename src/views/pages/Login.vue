@@ -41,10 +41,8 @@
   import firebase from 'firebase';
   import { firestore } from '@/main';
   import router from '@/router';
-  import BSpinner from 'bootstrap-vue/src/components/spinner/spinner';
-  @Component({
-    components: {BSpinner}
-  })
+
+  @Component
   export default class Login extends Vue {
     private email: string = '';
     private password: string = '';
@@ -63,7 +61,6 @@
         if (auth && auth.user && auth.user.uid) {
           firestore.collection('users').doc(auth.user.uid).get().then(user => {
             if (user.exists) {
-              user.data().grade.firestore.
               this.$store.dispatch('login', user.data()).then(() => {
                 router.push('/');
                 this.loading = false;

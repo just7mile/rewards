@@ -1,31 +1,31 @@
 <template>
   <div class="home">
     <b-row class="justify-content-center">
-      <b-col md="8">
+      <b-col md="10">
         <b-card-group>
           <b-card no-body class="p-4">
             <b-card-body>
               <b-form>
                 <b-form-group
                 label="Salary"
-                label-cols="3">
+                label-cols="4">
                   {{user.salary}}₸
                 </b-form-group>
                 <b-form-group
                 label="Taxes"
-                label-cols="3">
+                label-cols="4">
                   10%
                 </b-form-group>
                 <b-form-group
                 label="Pension"
-                label-cols="3">
+                label-cols="4">
                   10%
                 </b-form-group>
                 <b-form-group v-for="k in kpis"
                     :label="k.name"
                     :label-for="k.name"
                     :description="k.type === 'percent'?'The KPI is ' + k.percentage + '% for ' + k.price + '₸': k.price + '₸ for every ' + k.freq"
-                    :label-cols="3"
+                    :label-cols="4"
                     :horizontal="true">
                   <b-form-input :id="k.name" type="number" placeholder="Enter KPI.." v-model="k.value"></b-form-input>
                 </b-form-group>
@@ -33,7 +33,7 @@
                     label="Overwork"
                     label-for="overwork"
                     :description="'The amount of hours spent out of working schedule (' + user.overwork + '₸ for each hour)'"
-                    :label-cols="3"
+                    :label-cols="4"
                     :horizontal="true">
                   <b-form-input id="overwork" type="number" placeholder="Enter amount of hours" v-model="overwork"></b-form-input>
                 </b-form-group>

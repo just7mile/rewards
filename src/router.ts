@@ -6,6 +6,7 @@ import Users from '@/views/users/Users.vue';
 import Positions from '@/views/positions/Positions.vue';
 import Position from '@/views/positions/Position.vue';
 import Login from '@/views/pages/Login.vue';
+import Profile from '@/views/profile/Profile.vue';
 import Page404 from '@/views/pages/Page404.vue';
 import Page500 from '@/views/pages/Page500.vue';
 import firebase from 'firebase';
@@ -43,6 +44,11 @@ const router = new Router({
           path: 'position',
           name: 'Position',
           component: Position,
+        },
+        {
+          path: 'profile',
+          name: 'Profile',
+          component: Profile,
         },
       ],
     },
